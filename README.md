@@ -5,3 +5,6 @@
 + По теме ВКР также была написана публикация, посмотреть ее можно тут: [Публикация](https://drive.google.com/drive/folders/1BlTzVMvPBMTL5iG6IhpR2I39A72fqIPY?usp=share_link), а также она существует на сайте библиотеки ВолгГТУ [Публикация_VSTU](http://library.vstu.ru/publ_2/publ_result.php)
 
 ![Публикация](публ.jpg)
+
+
++ Файл ТЗ хранится [Тут](https://docs.google.com/document/d/1xZujccvOd6E_w-PFKEx_dJ6zA83LKipU/edit)
