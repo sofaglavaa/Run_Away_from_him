@@ -4,4 +4,4 @@
 + Дизайн-документ представлен в данном репозитории с расширением .pdf, а также его можно прочитать здесь: [Дизайн-документ](https://docs.google.com/document/d/19EyUOScNxvx73YKZrhxqUZdmNt0Yszb1k2QCXRXGdhg/edit)
 + По теме ВКР также была написана публикация, посмотреть ее можно тут: [Пeбликация](https://drive.google.com/drive/folders/1BlTzVMvPBMTL5iG6IhpR2I39A72fqIPY?usp=share_link), а также она существует на сайте библиотеки ВолгГТУ [Публикация_VSTU](http://library.vstu.ru/publ_2/publ_result.php)
 
-![Публикация]()
+![Публикация](публ.jpg)
