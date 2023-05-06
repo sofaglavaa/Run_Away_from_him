@@ -13,4 +13,4 @@
 + Референсы для локаций можно посмотреть по адресу: [Локации](https://drive.google.com/drive/folders/1ooyqS_C1eY3pAhUp2gorhiRV9x7Irn5p?usp=share_link)
 + MindMap: [Mind](https://www.mindmeister.com/map/2546883277?t=8XxDIB7JMs)
 + Проект, где проводились испытания ИИ и отработка механик, представлен в папке [Prototype](https://github.com/sofaglavaa/Diplom_GLava/tree/main/Prototype)
-+ Сам **проект ВКР** представлен в папке [Game_file]()
++ Сам **проект ВКР** представлен в папке [Game_file](https://github.com/sofaglavaa/Diplom_GLava/tree/main/Game_file/Assets)
