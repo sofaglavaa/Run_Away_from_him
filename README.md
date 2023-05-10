@@ -17,3 +17,4 @@
 + MindMap: [Mind](https://www.mindmeister.com/map/2546883277?t=8XxDIB7JMs)
 + Проект, где проводились испытания ИИ и отработка механик, представлен в папке [Prototype](https://github.com/sofaglavaa/Diplom_GLava/tree/main/Prototype)
 + Сам **проект ВКР** представлен в папке [Game_file](https://github.com/sofaglavaa/Diplom_GLava/tree/main/Game_file/Assets)
++ Игровое приложение находится в папке [GameAppl](https://github.com/sofaglavaa/Diplom_GLava/tree/main/GameAppl)
