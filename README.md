@@ -1,5 +1,8 @@
 ## В данном репозитории представлены файлы и ссылки на документы, связанные с созданием выпускной-квалификационной работы на тему: "Разработка хоррор игры с использованием ИИ преследователя". 
 ### Разработчиком данной игры, является студентка Волгоградского Государственного Технического Университета, факультета электроники и вычислительной техники, группы ИВТ-465, ***Главацкая Софья Владимировна***
++ Год разработки: 2023
++ Почта для связи: sofaglavaa@gmail.com
++ Скрипты для окружения и для ИИ, находятся в папке: [Scripts](https://github.com/sofaglavaa/Diplom_GLava/tree/main/Game_file/Assets/Scripts)
 + Вся документация хранится на google disk в электронном формате по адресу: [Диск с файлами](https://drive.google.com/drive/folders/1M2DxSfArPNMR7Jf72ocKCYPD0tzLARwo?usp=share_link)
 + Ссылка на папку с файлами игры и прототипа: [Game_File_Drive](https://drive.google.com/drive/folders/1WjGYKQFWpgV5GWJhHB97EZZWsGGoGamx?usp=share_link)
 + Дизайн-документ представлен в данном репозитории с расширением .pdf, а также его можно прочитать здесь: [Дизайн-документ](https://docs.google.com/document/d/19EyUOScNxvx73YKZrhxqUZdmNt0Yszb1k2QCXRXGdhg/edit)
