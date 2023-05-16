@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
     public string nameAttack;
 
     // Панель при проигрыше
-    public float ActivePanel;
+    // public float ActivePanel;
     public GameObject Panel_GaveOver;
     // Работа с рандомными точками для патрулирования
     public float speed;
@@ -81,8 +81,8 @@ public class EnemyController : MonoBehaviour
             if(distance < attackDistance){
                 GetComponent <NavMeshAgent>().enabled = false;
                 GetComponent <Animator>().Play(nameAttack);
-                // Active_Panel(ActivePanel);
-                Panel_GaveOver.SetActive(true);
+                StartCoroutine(Active_Panel());
+                // Panel_GaveOver.SetActive(true);
             }
             // Продолжение преследования
             if(distance > attackDistance & distance < radiusOfView){
@@ -91,9 +91,10 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
-    // IEnumerator Active_Panel(){
-    //     yield return new WaitForSeconds(ActivePanel);
-    //     Panel_GaveOver.SetActive(true);
-    // }
+    // Настройка уничтожения персонажа после срабатывания атаки
+    IEnumerator Active_Panel(){
+        yield return new WaitForSeconds(1.5f);
+        Panel_GaveOver.SetActive(true);
+    }
 }
 
