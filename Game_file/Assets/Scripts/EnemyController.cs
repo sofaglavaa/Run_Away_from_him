@@ -20,7 +20,7 @@ public class EnemyController : MonoBehaviour
     [Space (-5)]
     [Header ("Distance")]
     public float radiusOfView = 20;
-    public float attackDistance = 1.5f;
+    public float attackDistance = 4f;
 
     // Подключение анимаций
     [Space (-5)]
@@ -79,7 +79,7 @@ public class EnemyController : MonoBehaviour
             }
             // Атака игрока
             if(distance < attackDistance){
-                GetComponent <NavMeshAgent>().enabled = false;
+                // GetComponent <NavMeshAgent>().enabled = false;
                 GetComponent <Animator>().Play(nameAttack);
                 StartCoroutine(Active_Panel());
                 // Panel_GaveOver.SetActive(true);
