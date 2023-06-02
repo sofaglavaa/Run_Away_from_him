@@ -10,6 +10,8 @@
 
 ![Публикация](публ.jpg)
 
+![Публикация]()
+
 
 + Файл ТЗ хранится по данному адресу [ТЗ](https://docs.google.com/document/d/1xZujccvOd6E_w-PFKEx_dJ6zA83LKipU/edit)
 + Файл ПЗ хранится по данному адресу [ПЗ](https://docs.google.com/document/d/1KDL00usfFFaBSXuffdM98uvN2CnuXR-6uQSJgzpBb_M/edit?usp=share_link)
