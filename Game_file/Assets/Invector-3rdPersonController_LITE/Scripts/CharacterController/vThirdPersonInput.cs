@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace Invector.vCharacterController
 {
@@ -20,7 +21,6 @@ namespace Invector.vCharacterController
         [HideInInspector] public vThirdPersonController cc;
         [HideInInspector] public vThirdPersonCamera tpCamera;
         [HideInInspector] public Camera cameraMain;
-
         #endregion
 
         protected virtual void Start()
@@ -121,10 +121,12 @@ namespace Invector.vCharacterController
 
         protected virtual void SprintInput()
         {
-            if (Input.GetKeyDown(sprintInput))
+            if (Input.GetKeyDown(sprintInput)){
                 cc.Sprint(true);
-            else if (Input.GetKeyUp(sprintInput))
-                cc.Sprint(false);
+            }
+            else if (Input.GetKeyUp(sprintInput)){
+                cc.Sprint(false);            
+            }
         }
 
         /// <summary>
@@ -144,7 +146,6 @@ namespace Invector.vCharacterController
             if (Input.GetKeyDown(jumpInput) && JumpConditions())
                 cc.Jump();
         }
-
         #endregion       
     }
 }
