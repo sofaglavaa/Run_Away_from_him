@@ -14839,7 +14839,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -14868,9 +14868,10 @@ MonoBehaviour:
   attackDistance: 4
   nameIdle: Idle
   nameWalk: Walk
+  nameSword: Sword
   nameAttack: Attack
   Panel_GaveOver: {fileID: 160052194}
-  speed: 1.5
+  speed: 1
   moveSpots:
   - {fileID: 101256880}
   - {fileID: 146953}

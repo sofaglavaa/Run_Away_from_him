@@ -6,9 +6,6 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     float timer = 0;
-    // public Transform[] points;
-    // public int Current_Patch;
-    // List<Transform> points = new List<Transform>();
 
     // Настройка дистанции видимости игрока
     private float distance;
@@ -27,6 +24,7 @@ public class EnemyController : MonoBehaviour
     [Header ("Animations")]
     public string nameIdle;
     public string nameWalk;
+    public string nameSword;
     public string nameAttack;
 
     // Панель при проигрыше
@@ -40,6 +38,8 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(("Значение поля видимости: " + radiusOfView));
+        print("Значение поля видимости: " + radiusOfView);
         distance = Vector3.Distance(myPlayer.position, transform.position); // Расстояние от игрока до противника
         // Первые 5 секунд противник стоит и далее начинает движение
         if(timer < 5){
@@ -75,14 +75,17 @@ public class EnemyController : MonoBehaviour
             if(distance < radiusOfView & distance >= attackDistance){
                 GetComponent <NavMeshAgent>().enabled = true;
                 GetComponent <NavMeshAgent>().destination = myPlayer.position;
-                GetComponent <Animator>().Play(nameWalk);
+                GetComponent <Animator>().Play(nameSword);
+                speed += 10;
+                if (distance <= 15){
+                    radiusOfView = radiusOfView + Time.deltaTime;
+                }
             }
             // Атака игрока
             if(distance < attackDistance){
                 // GetComponent <NavMeshAgent>().enabled = false;
                 GetComponent <Animator>().Play(nameAttack);
                 StartCoroutine(Active_Panel());
-                // Panel_GaveOver.SetActive(true);
             }
             // Продолжение преследования
             if(distance > attackDistance & distance < radiusOfView){
@@ -90,6 +93,7 @@ public class EnemyController : MonoBehaviour
                 GetComponent <NavMeshAgent>().destination = myPlayer.position;
             }
         }
+        Debug.Log(("Значение поля видимости: " + radiusOfView));
     }
     // Настройка уничтожения персонажа после срабатывания атаки
     IEnumerator Active_Panel(){
