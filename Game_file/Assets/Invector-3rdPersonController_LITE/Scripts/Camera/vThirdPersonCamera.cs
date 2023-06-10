@@ -7,7 +7,7 @@ public class vThirdPersonCamera : MonoBehaviour
 
     public Transform target;
     [Tooltip("Lerp speed between Camera States")]
-    public float smoothCameraRotation = 12f;
+    public float smoothCameraRotation = 0f;
     [Tooltip("What layer will be culled")]
     public LayerMask cullingLayer = 1 << 0;
     [Tooltip("Debug purposes, lock the camera behind the character for better align the states")]
@@ -48,7 +48,7 @@ public class vThirdPersonCamera : MonoBehaviour
     private float mouseX = 0f;
     private float currentHeight;
     private float cullingDistance;
-    private float checkHeightRadius = 0.4f;
+    private float checkHeightRadius = 0.1f;
     private float clipPlaneMargin = 0f;
     private float forward = -1f;
     private float xMinLimit = -360f;

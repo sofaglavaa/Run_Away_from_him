@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 
-
-
 namespace Invector.vCharacterController
 {
     public class vThirdPersonController : vThirdPersonAnimator
