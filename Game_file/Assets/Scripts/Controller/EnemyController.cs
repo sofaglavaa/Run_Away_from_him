@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     float timer = 0;
+    float stopwatch = 0;
+    float flashlightOn = 0;
 
     // Настройка дистанции видимости игрока
     private float distance;
@@ -13,11 +15,12 @@ public class EnemyController : MonoBehaviour
     [Header ("Target")]
     public Transform myPlayer;
 
-    // Настройка радиуса видимости и атаки
+    // Настройка радиуса видимости, атаки и зоны досягаемости
     [Space (-5)]
     [Header ("Distance")]
-    public float radiusOfView = 20;
+    public float radiusOfView = 10;
     public float attackDistance = 4f;
+    public float reachArea = 15;
 
     // Подключение анимаций
     [Space (-5)]
@@ -38,8 +41,6 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(("Значение поля видимости: " + radiusOfView));
-        print("Значение поля видимости: " + radiusOfView);
         distance = Vector3.Distance(myPlayer.position, transform.position); // Расстояние от игрока до противника
         // Первые 5 секунд противник стоит и далее начинает движение
         if(timer < 5){
@@ -70,6 +71,34 @@ public class EnemyController : MonoBehaviour
                         speed = Mathf.Clamp(speed, 0, 1);
                     }
                 }
+                // Поиск игрока при нажатии клавиши спринта
+                if(Input.GetKeyDown(KeyCode.LeftShift)){
+                    print("Проверка позиции игрока(спринт)" );
+                    StartCoroutine(Search_Player());
+                    GetComponent <NavMeshAgent>().destination = myPlayer.position;
+                    GetComponent <Animator>().Play(nameWalk);
+                }
+                // Поиск игрока при нажатии клавиши ходьбы
+                if(Input.GetKey(KeyCode.W)){
+                    print(stopwatch);
+                    stopwatch += Time.deltaTime;
+                    if(stopwatch > 10){
+                        print("Проверка позиции игрока(ходьба)" );
+                        GetComponent <NavMeshAgent>().destination = myPlayer.position;
+                        GetComponent <Animator>().Play(nameWalk);
+                    }
+                }
+                // Поиск игрока при включении фонаря
+                if(Input.GetKeyDown(KeyCode.F)){
+                    flashlightOn += 1;
+                    print(flashlightOn);
+                    if(flashlightOn == 3){
+                        print("Проверка позиции игрока(фонарик)" );
+                        GetComponent <NavMeshAgent>().destination = myPlayer.position;
+                        GetComponent <Animator>().Play(nameWalk);
+                        flashlightOn = 0;
+                    }
+                }
             }
             // Преследование
             if(distance < radiusOfView & distance >= attackDistance){
@@ -77,7 +106,7 @@ public class EnemyController : MonoBehaviour
                 GetComponent <NavMeshAgent>().destination = myPlayer.position;
                 GetComponent <Animator>().Play(nameSword);
                 speed += 10;
-                if (distance <= 15){
+                if (distance <= reachArea){
                     radiusOfView = radiusOfView + Time.deltaTime;
                 }
             }
@@ -93,12 +122,16 @@ public class EnemyController : MonoBehaviour
                 GetComponent <NavMeshAgent>().destination = myPlayer.position;
             }
         }
-        Debug.Log(("Значение поля видимости: " + radiusOfView));
     }
     // Настройка уничтожения персонажа после срабатывания атаки
     IEnumerator Active_Panel(){
         yield return new WaitForSeconds(1.5f);
         Panel_GaveOver.SetActive(true);
     }
+    // Настройка реакции для поиска игрока при спринте
+    IEnumerator Search_Player(){
+        if(Input.GetKeyDown(KeyCode.LeftShift)){
+            yield return new WaitForSeconds(1f);
+        }
+    }
 }
-
