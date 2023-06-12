@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     float timer = 0;
-    float stopwatch = 0;
+    float stopwatch = 1;
     float flashlightOn = 0;
 
     // Настройка дистанции видимости игрока
@@ -86,6 +86,7 @@ public class EnemyController : MonoBehaviour
                         print("Проверка позиции игрока(ходьба)" );
                         GetComponent <NavMeshAgent>().destination = myPlayer.position;
                         GetComponent <Animator>().Play(nameWalk);
+                        stopwatch = 0;
                     }
                 }
                 // Поиск игрока при включении фонаря
